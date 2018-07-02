@@ -1,10 +1,23 @@
-<% @songs.each do |song| %>
-  <ul>
-    <li><%= song.title %></li>
-    <li><%= song.length %></li>
-    <li><%= song.play_count %></li>
-    <% if song.playlist %>
-      <li><%= song.playlist.name %></li>
-    <% end %>
-  </ul>
- <% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Shrikhand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class='song-header'> Songs </h1>
+    <div class="songs-container">
+      <% @songs.each do |song| %>
+      <div class='songs-children'>
+      <ul>
+        <img src="vinyl.jpg" alt="Vinyl Photo by Adrian Korte" height="80" width="80"/>
+        <li><%= song.title %></li>
+        <li><%= song.length %> seconds</li>
+        <li>Play Count: <%= song.play_count %></li>
+      </ul>
+      </div>
+      <% end %>
+    </div>
+  </body>
+</html>
